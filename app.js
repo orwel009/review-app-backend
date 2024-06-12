@@ -21,6 +21,18 @@ app.post("/add",(req,res)=>{
     res.json({"status":"success"})
 })
 
+app.post("/view",(req,res)=>{
+    reviewModel.find().then(
+        (data)=>{
+            res.json(data)
+        }
+    ).catch(
+        (error)=>{
+            res.json(error)
+        }
+    )
+})
+
 app.listen(8080,()=>{
     console.log("Servrer Started")
 })
