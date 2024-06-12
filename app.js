@@ -6,6 +6,12 @@ const app = express()
 
 app.use(cors())
 
-app.get("/add",(req,res)=>{
+app.post("/add",(req,res)=>{
+    let input = req.body
+    console.log(input)
     res.send("Adde page")
+})
+
+app.listen(8080,()=>{
+    console.log("Servrer Started")
 })
